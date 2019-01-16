@@ -10,12 +10,21 @@ export function createNewsView(NewsArr){
     let NewsArr2= [{'test':'test'}, {test2:'test2'}]
 
     console.log(NewsArr2)
-    // NewsArr2.forEach(bicycleObjet => {
-        // console.log(bicycleObjet)
 
-        // NewsBicycleCardHTML += new BicycleCard(bicycleObjet).render()
+    console.log(NewsArr[0])
+    try {
+        
+    NewsArr.forEach(bicycleObject => {
+        console.log(bicycleObject)
 
-    // });
+        NewsBicycleCardHTML += new BicycleCard(bicycleObject).render()
+
+
+    });
+    
+} catch (error) {
+        console.error(error)
+}
     
     return `
     <section id="favoriteSection">
