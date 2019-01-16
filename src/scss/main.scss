@@ -1,0 +1,26 @@
+$color-orange: #f98a09;
+body {
+  background: $color-orange;
+}
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.header-section{
+  background: #f7f7f7f7;
+}
+
+.btn {
+  background-color: fuchsia;
+}
+
+#header-img{
+  height: 300px;
+  object-fit: cover;
+}
+
+.header-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
