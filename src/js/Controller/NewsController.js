@@ -17,6 +17,7 @@ export function setupnewsview(NewsArr){
         
         NewsBtn.addEventListener('click', (event) => {
             if(event.target.matches('.btn')){
+                console.log("Her er din knap" , event.target)
                 
             }
         })

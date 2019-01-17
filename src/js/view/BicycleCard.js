@@ -13,12 +13,23 @@ export default class BicycleCard{
     render(){
         console.log("BicycleCard" , this)
         return `
-        <div class="card d-flex flex-wrap">
+        <div class="card">
             <img class="card-img-top" src="${this.image}" >
             <div class="card-body">
                 <p class="card-text">${this.shorttext}</p>                
             </div>
         </div>
         `
+    }
+    renderSecond(){
+        return `
+        <div class="card col-6">
+            <img class="card-img-top" src="${this.image}" >
+            <div class="card-body">
+                <p class="card-text">${this.shorttext}</p>                
+            </div>
+        </div>
+        `
+
     }
 }
