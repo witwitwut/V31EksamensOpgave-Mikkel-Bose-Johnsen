@@ -1,9 +1,9 @@
 import BicycleCard from "./BicycleCard";
 
 
-export function createNewsView(NewsObject){
+export function createNewsView(NewsArr){
     
-    console.log(NewsObject)
+    console.log(NewsArr)
 
     let NewsBicycleCardHTML = ''
 
@@ -16,14 +16,14 @@ export function createNewsView(NewsObject){
     // console.log(NewsArr[0])
     try {
         
-    // NewsArr.forEach(bicycleObject => {
-    //     console.log(bicycleObject)
+    NewsArr.forEach(bicycleObject => {
+        console.log(bicycleObject)
 
-        NewsBicycleCardHTML = NewsObject.render()
+        NewsBicycleCardHTML += new BicycleCard(bicycleObject).render()
         
         console.log(NewsBicycleCardHTML)
 
-    // });
+    });
     
 } catch (error) {
         console.error(error)
