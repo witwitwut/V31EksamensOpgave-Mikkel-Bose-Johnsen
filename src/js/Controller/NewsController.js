@@ -6,6 +6,18 @@ export function setupnewsview(NewsArr){
 
         let NewsSectionWithNewsBicycleCards = createNewsView(NewsArr)
 
-        document.body.insertAdjacentHTML('beforeend',NewsSectionWithNewsBicycleCards)
+        const start = document.getElementById('startView')
 
+        start.insertAdjacentHTML('afterend',NewsSectionWithNewsBicycleCards)
+
+
+        const NewsBtn = document.getElementById("NewsButton")
+
+
+        
+        NewsBtn.addEventListener('click', (event) => {
+            if(event.target.matches('.btn')){
+                
+            }
+        })
 }

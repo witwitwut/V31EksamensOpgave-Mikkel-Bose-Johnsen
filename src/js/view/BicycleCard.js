@@ -1,6 +1,7 @@
 
 export default class BicycleCard{
     constructor(bicycle){
+        this.id = bicycle.id
         this.title = bicycle.title.rendered
         this.content = bicycle.content.rendered
         this.shorttext = bicycle.slug
@@ -12,10 +13,10 @@ export default class BicycleCard{
     render(){
         console.log("BicycleCard" , this)
         return `
-        <div class="card" >
+        <div class="card d-flex flex-wrap">
             <img class="card-img-top" src="${this.image}" >
             <div class="card-body">
-                <p class="card-text">${this.shorttext}</p>
+                <p class="card-text">${this.shorttext}</p>                
             </div>
         </div>
         `

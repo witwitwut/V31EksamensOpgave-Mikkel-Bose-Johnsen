@@ -5,7 +5,11 @@ export function createNewsView(NewsArr){
     
     console.log(NewsArr)
 
-    let NewsBicycleCardHTML = ''
+    let NewsBicycleCardHTMLSecond = ''
+    let NewsBicycleCardHTMLFirst = ''
+    let NewsBicycleCardHTMlThird = ''
+
+    let i = 0
 
     // console.log("virker ikke" ,NewsArr)
 
@@ -18,8 +22,15 @@ export function createNewsView(NewsArr){
         
     NewsArr.forEach(bicycleObject => {
         console.log(bicycleObject)
+        if (i === 0) {
+            NewsBicycleCardHTMLFirst += new BicycleCard(bicycleObject).render()
+            i++
+        } else if(i == 1 || i == 2){
 
-        NewsBicycleCardHTML += new BicycleCard(bicycleObject).render()
+        NewsBicycleCardHTMLSecond += new BicycleCard(bicycleObject).render()
+        i++
+
+    }
         
         console.log(NewsBicycleCardHTML)
 
@@ -36,19 +47,24 @@ export function createNewsView(NewsArr){
                 <h2 class="text-black">Nyheder</h2>
             </div>
         </header>
-        <div class="bg-white py-2">
+        <article class="bg-white py-2">
             <div class=" container my-4">
                 <div class="row">
-                    ${NewsBicycleCardHTML}
+                    <div class="col">
+                    ${NewsBicycleCardHTMLFirst}
+                    </div>
+                    <div class="col-4 d-flex align-content-start flex-wrap">
+                        ${NewsBicycleCardHTMLSecond}
+                    </div>
                 </div>
             </div>
-            <div class="">
+            <div class="container">
                 <hr class="my-4">
-                <p class="lead">
-                    <a data class="btn border-0 btn-primary btn-lg" href="#" role="button">Se Flere Nyheder</a>
+                <p class="lead d-flex justify-content-center ">
+                    <a id="NewsButton" data class="btn border-0 btn-primary btn-lg" href="" role="button">Se Flere Nyheder</a>
                 </p>
             </div> 
-        </div>
+        </article>
     </section>
     `
 }

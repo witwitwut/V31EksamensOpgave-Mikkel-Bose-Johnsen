@@ -2,7 +2,7 @@ import { createHeaderView } from "./view/HeaderView";
 import { createFooterView } from "./view/FooterView";
 import { GetJsonObject } from "./model/Api";
 import BicycleCard from "./view/BicycleCard";
-import NewsController, { setupnewsview } from "./Controller/NewsController";
+import { setupnewsview } from "./Controller/NewsController";
 import { createNewsView } from "./view/NewsView";
 
 
@@ -17,7 +17,7 @@ class App{
                 .then(arr =>
                     
                                         
-                    setupnewsview(arr)
+                    setupnewsview(arr)                    
                     // forEach(bicycle => {
                         // const foo = new BicycleCard(bicycle)
                         // createNewsView(foo)
@@ -32,7 +32,7 @@ class App{
        
         // console.log(newssection)
 
-        document.body.insertAdjacentHTML('afterend', createFooterView())
+        document.body.insertAdjacentHTML('beforeend', createFooterView())
     }
 }
 
