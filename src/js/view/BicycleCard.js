@@ -23,7 +23,7 @@ export default class BicycleCard{
     }
     renderSecond(){
         return `
-        <div class="card col-6">
+        <div class="card">
             <img class="card-img-top" src="${this.image}" >
             <div class="card-body">
                 <p class="card-text">${this.shorttext}</p>                

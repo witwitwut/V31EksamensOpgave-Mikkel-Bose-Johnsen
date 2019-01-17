@@ -2,7 +2,7 @@ export function createHeaderView(){
     return `
     
   <Header id="startView" class="jumbotron header-section">
-    <section class="container d-flex">  
+    <section class="container d-flex"> 
         <article>
             <h1 class="display-4">Bicycle Innovation Lab</h1>
             <p class="lead">FOrening med cykelbiblotek, værksted og forskellige innovative <br> cykelprojekter til fremme for cykelkulturen, og cyklen som det miljørigtige <br> og sunde alternativ til bilen 

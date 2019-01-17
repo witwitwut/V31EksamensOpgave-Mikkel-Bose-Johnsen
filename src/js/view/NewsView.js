@@ -65,13 +65,15 @@ export function createNewsView(NewsArr){
         </header>
         <article class="bg-white py-2">
             <div class=" container my-4">
-                <div class="row">
-                    <div class="col-6 flex-row">
+                <div class="row d-flex">
+                    <div class="col-md-6 col-sm-12">
                     ${NewsBicycleCardHTMLFirst}
                     </div>
-                    <div class="col-6 ">
-                        <div id="BicykelObejects" class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <div id="BicykelObejects" class="row d-flex flex-md-row">
+                            <div class="col-md-12 m-2">
                                 ${NewsBicycleCardHTMLSecond}
+                            </div>
                         </div>
                     </div>
                 </div>
