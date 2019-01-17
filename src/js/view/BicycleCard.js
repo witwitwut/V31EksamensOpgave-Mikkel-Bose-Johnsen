@@ -16,7 +16,7 @@ export default class BicycleCard{
         <div class="card">
             <img class="card-img-top" src="${this.image}" >
             <div class="card-body">
-                <p class="card-text">${this.shorttext}</p>                
+                <p class="card-text">${this.shorttext}</p>              
             </div>
         </div>
         `
