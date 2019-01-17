@@ -1,5 +1,7 @@
 import BicycleCard from "./BicycleCard";
 
+let NewsBicycleCardUsedlist = []
+let NoInsertDuplicateList = []
 
 export function createNewsView(NewsArr){
     
@@ -7,7 +9,11 @@ export function createNewsView(NewsArr){
 
     let NewsBicycleCardHTMLSecond = ''
     let NewsBicycleCardHTMLFirst = ''
-    let NewsBicycleCardHTMlThird = ''
+   
+
+ 
+   
+
 
     let i = 0
 
@@ -23,18 +29,20 @@ export function createNewsView(NewsArr){
     NewsArr.forEach(bicycleObject => {
         console.log(bicycleObject)
         if (i === 0) {
+            NewsBicycleCardUsedlist.push(bicycleObject)
             NewsBicycleCardHTMLFirst += new BicycleCard(bicycleObject).render()
-            i++
-        } else if (i > 0 && i < 6) {
 
+            i++
+        } else if (i > 0 && i < 5) {
+            NewsBicycleCardUsedlist.push(bicycleObject)
             NewsBicycleCardHTMLSecond += new BicycleCard(bicycleObject).renderSecond()
             i++
             
         } else{
 
         }
-    
         
+        console.log("used", NewsBicycleCardUsedlist)        
         console.log(NewsBicycleCardHTMLSecond)
         console.log(i)
 
@@ -44,8 +52,6 @@ export function createNewsView(NewsArr){
 } catch (error) {
         console.error(error)
 }
-
-const NewsBtn = document.getElementById("NewsButton")
 
 
         
@@ -64,7 +70,7 @@ const NewsBtn = document.getElementById("NewsButton")
                     ${NewsBicycleCardHTMLFirst}
                     </div>
                     <div class="col-6 ">
-                        <div class="row">
+                        <div id="BicykelObejects" class="row">
                                 ${NewsBicycleCardHTMLSecond}
                         </div>
                     </div>
@@ -79,4 +85,28 @@ const NewsBtn = document.getElementById("NewsButton")
         </article>
     </section>
     `
+}
+
+export function insertIntoNews(NewsArr){
+    
+    let InsertHTML = ''
+    const AddedHTML = document.getElementById('BicykelObejects')
+    
+    try {
+        
+        NewsArr.forEach(bicycleObject => {
+           
+            if (!NewsBicycleCardUsedlist.find(x => x.id === bicycleObject.id )) {
+                if (!NoInsertDuplicateList.find(x => x.id === bicycleObject.id)) {
+                    NoInsertDuplicateList.push(bicycleObject)
+                    InsertHTML += new BicycleCard(bicycleObject).renderSecond()                    
+                }                
+            }    
+        })
+    }
+    catch(error){
+        console.error(error)
+    }
+
+    return AddedHTML.insertAdjacentHTML('beforeend', InsertHTML)
 }
