@@ -10,6 +10,7 @@ export default class BicycleCard{
     }
 
     render(){
+        console.log("BicycleCard" , this)
         return `
         <div class="card" >
             <img class="card-img-top" src="${this.image}" >
